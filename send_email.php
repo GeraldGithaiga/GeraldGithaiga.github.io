@@ -1,12 +1,22 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $message = $_POST["message"];
+    // Sanitize and validate form data
+    $name = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+    $message = filter_var($_POST["message"], FILTER_SANITIZE_STRING);
+
+    if (empty($name) || empty($email) || empty($message)) {
+        echo "All fields are required.";
+        exit();
+    }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Invalid email format.";
+        exit();
+    }
 
     // Set recipient email address
-    $to = "your_email@example.com"; // Change this to your email address
+    $to = "your-email@example.com"; // Change this to your email address
 
     // Set email subject
     $subject = "New Contact Form Submission";
@@ -17,7 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_message .= "Message:\n$message\n";
 
     // Set headers
-    $headers = "From: $email";
+    $headers = "From: $email\r\n";
+    $headers .= "Reply-To: $email\r\n";
 
     // Send email
     if (mail($to, $subject, $email_message, $headers)) {
