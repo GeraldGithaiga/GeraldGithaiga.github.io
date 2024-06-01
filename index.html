@@ -12,6 +12,37 @@
     <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap +  main styles -->
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="path/to/your/css/file.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <style>
+        .header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .header {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('imgs/header.jpg') no-repeat center center/cover;
+        }
+
+        .typed {
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
@@ -31,7 +62,7 @@
                     <a class="link" href="#portfolio">Portfolio</a>
                 </li>
                 <li class="item">
-                    <a class="link" href="#testmonial">Testmonial</a>
+                    <a class="link" href="#Inspiration">Inspiration</a>
                 </li>
                 <li class="item">
                     <a class="link" href="#contact">Contact</a>
@@ -49,91 +80,22 @@
     <header id="home" class="header">
         <div class="overlay"></div>
         <div class="header-content container">
-            <h1 class="header-title">
-                <section class="slider_section ">
-                    <div class="slider_bg_box">
-                       <img src="header.jpg" alt="">
-                    </div>
-                    <div id="customCarousel1" class="carousel slide" data-ride="carousel">
-                       <div class="carousel-inner">
-                          <div class="carousel-item active">
-                             <div class="container ">
-                                <div class="row">
-                                   <div class="col-md-7 col-lg-6 ">
-                                      <div class="detail-box">
-                                         <h1>
-                                            <span>
-                                            Gerald Githaiga
-                                            </span>
-                                            <br>
-                                            I'm a frontend Web Designer
-                                         </h1>
-                                         <div class="btn-box">
-                                            <a href="" class="btn1">
-                                            </a>
-                                         </div>
-                                      </div>
-                                   </div>
-                                </div>
-                             </div>
-                          </div>
-                          <div class="carousel-item ">
-                             <div class="container ">
-                                <div class="row">
-                                   <div class="col-md-7 col-lg-6 ">
-                                      <div class="detail-box">
-                                         <h1>
-                                            <span>
-                                                Gerald Githaiga
-                                            </span>
-                                            <br>
-                                            I'm a Data Science Enthusiast
-                                         </h1>
-                                           <div class="btn-box">
-                                            <a href="" class="btn1">
-                                            </a>
-                                         </div>
-                                      </div>
-                                   </div>
-                                </div>
-                             </div>
-                          </div>
-                          <div class="carousel-item">
-                             <div class="container ">
-                                <div class="row">
-                                   <div class="col-md-7 col-lg-6 ">
-                                      <div class="detail-box">
-                                         <h1>
-                                            <span>
-                                                Gerald Githaiga
-                                            </span>
-                                            <br>
-                                            I'm a Sales Executive
-                                         </h1>
-                                         <div class="btn-box">
-                                            <a href="" class="btn1">
-                                            </a>
-                                         </div>
-                                      </div>
-                                   </div>
-                                </div>
-                             </div>
-                          </div>
-                       </div>
-                       <div class="container">
-                          <ol class="carousel-indicators">
-                             <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
-                             <li data-target="#customCarousel1" data-slide-to="1"></li>
-                             <li data-target="#customCarousel1" data-slide-to="2"></li>
-                          </ol>
-                       </div>
-                    </div>
-                 </section>
-                 <!-- end slider section -->
-                
-            
+            <h1>Gerald Githaiga</h1>
+            <p>I'm a <span class="typed" data-typed-items=", frontend Web Developer, Data science Enthusiast, Sales Executive,freelancing"></span></p>
         </div>
-    </header><!-- end of page header -->
+    </header>
+    <!-- end of page header -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            new Typed('.typed', {
+                strings: document.querySelector('.typed').getAttribute('data-typed-items').split(','),
+                typeSpeed: 100,
+                backSpeed: 50,
+                backDelay: 2000,
+                loop: true
+            });
+        });
+    </script>
 
     <!-- about section -->
     <section class="section pt-0" id="about">
@@ -167,7 +129,7 @@
     <section class="section" id="service">
         <div class="container text-center">
             <h6 class="section-title mb-6">Services</h6>
-            <!-- row -->
+            <!-- row --> 
             <div class="row">
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card">
@@ -277,11 +239,12 @@
                     <p class="m-0 text-light">Always feel Free to Contact & Hire me</p>
                 </div>
                 <div class="col-sm offset-sm-2 offset-md-3">
-                    <button class="btn btn-lg my-font btn-light rounded">Hire Me</button>
+                    <a href="mailto:geraldgithaiga98@gmail.com" class="btn btn-lg my-font btn-light rounded">Hire Me</a>
                 </div>
             </div> <!-- end of row -->
         </div> <!-- end of container -->
-    </section> <!-- end of section -->
+    </section>
+     <!-- end of section -->
 
     <!-- testimonial section -->
     <section class="section" id="testmonial">

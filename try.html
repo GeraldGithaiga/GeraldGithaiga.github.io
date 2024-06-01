@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Gerald Githaiga portfolio.">
+    <meta name="author" content="Gerald Githaiga">
+    <title>Gerald Githaiga</title>
+    <link rel="icon" href="imgs/favicon.png" type="image/png" sizes="32x32">
+    <!-- font icons -->
+    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + main styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <style>
+        .header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .header {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('imgs/header.jpg') no-repeat center center/cover;
+        }
+
+        .typed {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Page Navbar -->
+    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="logo" href="#">Home</a>
+            <ul class="nav">
+                <li class="item"><a class="link" href="#home">Home</a></li>
+                <li class="item"><a class="link" href="#about">About</a></li>
+                <li class="item"><a class="link" href="#portfolio">Portfolio</a></li>
+                <li class="item"><a class="link" href="#inspiration">Inspiration</a></li>
+                <li class="item"><a class="link" href="#contact">Contact</a></li>
+            </ul>
+            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+                <div class="hamburger-box">
+                    <div class="hamburger-inner"></div>
+                </div>
+            </a>
+        </div>
+    </nav><!-- End of Page Navbar -->
+
+    <!-- Page Header -->
+    <header id="home" class="header">
+        <div class="overlay"></div>
+        <div class="header-content container">
+            <h1>Victoria Nyamai</h1>
+            <p>I'm a <span class="typed" data-typed-items="UI/UX Designer, Full Stack Developer, Freelancer, Machine Learning Enthusiast"></span></p>
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            new Typed('.typed', {
+                strings: document.querySelector('.typed').getAttribute('data-typed-items').split(','),
+                typeSpeed: 100,
+                backSpeed: 50,
+                backDelay: 2000,
+                loop: true
+            });
+        });
+    </script>
+</body>
+
+</html>
